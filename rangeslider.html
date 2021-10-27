@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- Slide range css -->
+<link rel="stylesheet" href="range.css">
+</head>
+<body>
+<center>
+    <br>
+<div class="container w-50">
+    <div class="shadow p-3 mb-5 bg-white rounded">
+        <h5>LOAN CALCULATOR </h5>
+        <br>
+        <div id="category" class="btn btn-info">Personal Loan</div>
+        <div id="category" class="btn btn-info">Business Loan</div>
+
+<!--Break Lines-->
+<br><br><br>
+        <p class="amount">How Much Would you like to borrow?</p>
+        <div class="btn btn-primary" id="amountoutput"></div>
+        <!--Break Lines-->
+<br><br><br>
+        <div class="slidecontainer">
+          <input type="range" min="200" max="15000" value="500" class="slider" id="amount">
+          </div>
+          
+        <!--Holizontal line-->
+        <hr>
+        <p class="period">For How Long?</p>
+        <div class="btn btn-primary"  id="periodoutput"></div>
+        <!--Holizontal line-->
+        <hr>
+        <div class="slidecontainer">
+          <input type="range" min="1" max="24" value="6" class="slider" id="period">
+          </div>
+          <!--Calculate Loan Amount-->
+          <hr>
+          <div class="btn btn-success" onclick="loanAnalysis()">Calculate</div>
+      </div>
+</div>
+<br>
+<h5>RESULTS</h5>
+<div class="shadow p-3 mb-5 bg-white rounded container w-50">
+    
+            <P>Monthly Payments (ZMW): </P>
+            <div id="monthly"></div>
+            <!--Holizontal line Line -->
+           <hr>
+            <P>Total Amount To Pay (ZMW): </P>
+            <div id="total"></div> 
+            <small>There is an addition of ZMW 130 processing fee.</small>
+              <!--Holizontal Line -->
+            <hr>
+            <P>Interest rate: </P>
+           
+            <div id="interest">15 %</div>
+                   
+    
+</div>
+<!--Holizontal Line-->
+<div class="btn btn-success">Agree?</div>
+
+
+  
+
+  
+    
+  
+</center>
+
+</body>
+
+<script src="assets\js\cal.js">
+</script>
+    
+
+</html>
