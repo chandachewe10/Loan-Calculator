@@ -20,58 +20,68 @@
 <body>
 <center>
     <br>
-<div class="container w-50">
+<div id="loan" class="container w-100">
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-lg-6">
     <div class="shadow p-3 mb-5 bg-white rounded">
         <h5>LOAN CALCULATOR </h5>
-        <br>
-        <div id="category" class="btn btn-info">Personal Loan</div>
-        <div id="category" class="btn btn-info">Business Loan</div>
-
-<!--Break Lines-->
-<br><br><br>
+       
+<!--Amount output-->
+<br>
         <p class="amount">How Much Would you like to borrow?</p>
-        <div class="btn btn-primary" id="amountoutput"></div>
-        <!--Break Lines-->
-<br><br><br>
+        <div class="btn btn-primary" >{{amountoutput}}</div>
+        <!--Amount Input-->
+<br>
         <div class="slidecontainer">
-          <input type="range" min="200" max="15000" value="500" class="slider" id="amount">
+          <input v-model="amountoutput" type="range" min="100" max="5000" value="500" class="slider">
           </div>
           
-        <!--Holizontal line-->
+        <!--Period Input-->
         <hr>
         <p class="period">For How Long?</p>
-        <div class="btn btn-primary"  id="periodoutput"></div>
-        <!--Holizontal line-->
+        <div class="btn btn-primary">{{periodoutput}} (weeks)</div>
+        <!--Period Output-->
         <hr>
         <div class="slidecontainer">
-          <input type="range" min="1" max="24" value="6" class="slider" id="period">
+          <input v-model="periodoutput" type="range" min="1" max="4" value="2" class="slider">
           </div>
-          <!--Calculate Loan Amount-->
-          <hr>
-          <div class="btn btn-success" onclick="loanAnalysis()">Calculate</div>
+        
       </div>
 </div>
-<br>
-<h5>RESULTS</h5>
-<div class="shadow p-3 mb-5 bg-white rounded container w-50">
-    
-            <P>Monthly Payments (ZMW): </P>
-            <div id="monthly"></div>
-            <!--Holizontal line Line -->
+
+
+
+<div class="col-xs-12 col-md-6 col-lg-6"> 
+   
+<div class="shadow p-3 mb-5 bg-white rounded container w-100">
+  <h5>RESULTS</h5>
+  <br>
+            <P>Interest Amount</P>
+            <div>{{InterestAmount}}</div>
+            <!--Amount to pay -->
            <hr>
             <P>Total Amount To Pay (ZMW): </P>
-            <div id="total"></div> 
-            <small>There is an addition of ZMW 130 processing fee.</small>
-              <!--Holizontal Line -->
+            <div>{{amountToPay}}</div> 
+            
+              <!--Interest rate-->
             <hr>
             <P>Interest rate: </P>
            
-            <div id="interest">15 %</div>
+            <div id="interest"><span>15% one week,</span><span> 25% two weeks,</span>
+              <span> 35% three weeks,</span> <span> & 45% four weeks</span>
+            </div>
                    
     
-</div>
+    
 <!--Holizontal Line-->
-<div class="btn btn-success">Agree?</div>
+<div class="btn btn-success">Get Started</div>
+
+
+</div>
+</div>
+</div>
+</div>
+
 
 
   
@@ -80,10 +90,11 @@
     
   
 </center>
-
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="assets\js\cal.js"></script>
 </body>
 
-<script src="assets\js\cal.js">
+
 </script>
     
 
